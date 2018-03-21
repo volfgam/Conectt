@@ -1,4 +1,5 @@
 ﻿using Conectt.Enum;
+using Conectt.Models;
 using Conectt.Repositories;
 using Conectt.Util;
 using Conectt.ViewModels;
@@ -73,7 +74,8 @@ namespace Conectt.Api
                         });
                         sucesso = false;
                     }
-                } else
+                }
+                else
                 {
                     mensagens.Add(new Mensagem
                     {
@@ -90,7 +92,7 @@ namespace Conectt.Api
                     Tipo = ETipoMensagem.Falha,
                     Texto = "CPF não foi informado"
                 });
-                sucesso = false;    
+                sucesso = false;
             }
 
             //somente maiores de 18 podem ser cadastrados
@@ -102,13 +104,46 @@ namespace Conectt.Api
                     Texto = "Data de nascimento não informado, este campo é obrigatório."
                 });
                 sucesso = false;
-            } else
-            {
-
             }
-            //validar campos obrigatórios 
-            //mensagem de sucesso "Formulário enviado com sucesso. Em breve entraremos em contato."
+            else
+            {
+                if (clienteModel.DataNascimento.AddYears(18) < DateTime.Now)
+                {
+                    mensagens.Add(new Mensagem
+                    {
+                        Tipo = ETipoMensagem.Falha,
+                        Texto = "Cliente tem menos de 18 anos e não pode prossegir o cadastro."
+                    });
+                    sucesso = false;
+                }
+            }
 
+            //Insere o cliente no banco
+            var cliente = new Cliente
+            {
+                Nome = clienteModel.Nome,
+                Cpf = clienteModel.Cpf,
+                DataNascimento = clienteModel.DataNascimento,
+                Email = clienteModel.Email,
+                Empresa = clienteModel.Empresa,
+                TelefoneComercialDdd = clienteModel.TelefoneComercialDdd,
+                TelefoneComercial = clienteModel.TelefoneComercial,
+                Celular = clienteModel.Celular,
+                CelularDdd = clienteModel.CelularDdd,
+                Idade = DateTime.Now.Year - clienteModel.DataNascimento.Year
+            };
+
+            //insere no banco 
+            try
+            {
+                await _clienteRepository.AddAndSaveAsync(cliente);
+            }
+            catch (Exception e)
+            {
+                return Json(new { Sucesso = false, erro = e.InnerException != null ? e.InnerException.Message : e.Message });
+            }
+            
+            //mensagem de sucesso "Formulário enviado com sucesso. Em breve entraremos em contato."
             return Json(new
             {
                 Sucesso = sucesso,
