@@ -137,6 +137,11 @@ namespace Conectt.Api
             try
             {
                 await _clienteRepository.AddAndSaveAsync(cliente);
+                mensagens.Add(new Mensagem
+                {
+                    Tipo = ETipoMensagem.Sucesso,
+                    Texto = "Formulário enviado com sucesso. Em breve entraremos em contato."
+                });
             }
             catch (Exception e)
             {

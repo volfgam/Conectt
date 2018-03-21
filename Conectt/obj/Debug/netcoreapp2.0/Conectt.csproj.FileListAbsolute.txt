@@ -9,3 +9,14 @@ C:\Users\Enton\Documents\Visual Studio 2017\Projects\Conectt\Conectt\obj\Debug\n
 C:\Users\Enton\Documents\Visual Studio 2017\Projects\Conectt\Conectt\bin\Debug\netcoreapp2.0\Conectt.pdb
 C:\Users\Enton\Documents\Visual Studio 2017\Projects\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.dll
 C:\Users\Enton\Documents\Visual Studio 2017\Projects\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.pdb
+C:\ProjetosMarcus\Conectt\Conectt\bin\Debug\netcoreapp2.0\Conectt.deps.json
+C:\ProjetosMarcus\Conectt\Conectt\bin\Debug\netcoreapp2.0\Conectt.runtimeconfig.json
+C:\ProjetosMarcus\Conectt\Conectt\bin\Debug\netcoreapp2.0\Conectt.runtimeconfig.dev.json
+C:\ProjetosMarcus\Conectt\Conectt\bin\Debug\netcoreapp2.0\Conectt.dll
+C:\ProjetosMarcus\Conectt\Conectt\bin\Debug\netcoreapp2.0\Conectt.pdb
+C:\ProjetosMarcus\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.csprojResolveAssemblyReference.cache
+C:\ProjetosMarcus\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.csproj.CoreCompileInputs.cache
+C:\ProjetosMarcus\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.AssemblyInfoInputs.cache
+C:\ProjetosMarcus\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.AssemblyInfo.cs
+C:\ProjetosMarcus\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.dll
+C:\ProjetosMarcus\Conectt\Conectt\obj\Debug\netcoreapp2.0\Conectt.pdb

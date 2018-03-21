@@ -1,0 +1,102 @@
+﻿@page
+@model ClientesModel
+@{
+    ViewData["Title"] = "Página de Clientes";
+}
+<h2>@ViewData["Title"]</h2>
+<div id="appCliente">
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#clienteModal">
+                <span class="glyphicon glyphicon-plus"></span>
+                Incluir Cliente
+            </button>
+        </div>
+    </div>
+    <div class="modal fade" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Formulário de Clientes</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group form-group-sm">
+                                <label for="nome" title="Obrigatório">Nome *</label>
+                                <input type="text" class="form-control" id="nome" v-model="nome">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group form-group-sm">
+                                <label for="cpf" title="Obrigatório">CPF *</label>
+                                <input type="text" class="form-control" id="cpf" v-model="cpf">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group form-group-sm">
+                                <label for="dataNascimento" title="Obrigatório">Data Nascimento *</label>
+                                <input type="text" class="form-control" id="dataNascimento" v-model="dataNascimento">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group form-group-sm">
+                                <label for="email" title="Obrigatório">E-mail *</label>
+                                <input type="email" class="form-control" id="email" v-model="email">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group form-group-sm">
+                                <label for="empresa">Empresa</label>
+                                <input type="text" class="form-control" id="empresa" v-model="empresa">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group form-group-sm">
+                                <label for="telefoneComercialDdd">DDD</label>
+                                <input type="text" class="form-control" id="telefoneComercialDdd" v-model="telefoneComercialDdd" >
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group form-group-sm">
+                                <label for="telefoneComercial">Telefone Comercial</label>
+                                <input type="text" class="form-control" id="telefoneComercial" v-model="telefoneComercial">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group form-group-sm">
+                                <label for="celularDdd">DDD</label>
+                                <input type="text" class="form-control" id="celularDdd" v-model="celularDdd">
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group form-group-sm">
+                                <label for="celular">Celular</label>
+                                <input type="text" class="form-control" id="celular" v-model="celular">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/vue/cliente.js" asp-append-version="true"></script>
+}
