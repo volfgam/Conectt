@@ -14,7 +14,13 @@
     methods: {
         
     },
-    created: {
-
+    updated: function () {
+        $('#dataNascimento').mask('00/00/0000');
     }
 });
+
+
+//$(document).ready(function () {
+    
+//    //https://igorescobar.github.io/jQuery-Mask-Plugin/
+//});
